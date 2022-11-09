@@ -2,6 +2,8 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 
+require('dotenv').config()
+
 const Inventory = require('./includes/inventory');
 
 // cleanup headers
@@ -1896,4 +1898,4 @@ app.all('*', function(req, res, next){
   });
 });
 
-app.listen(9880);
+app.listen(process.env.PORT);
